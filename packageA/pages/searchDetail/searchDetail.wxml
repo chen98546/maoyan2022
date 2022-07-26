@@ -1,0 +1,44 @@
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<van-search value="{{ kw }}" placeholder="请输入搜索关键词" show-action bind:search="getSearchDataFn" bind:cancel="onSearchCancel" bind:change="onSearchChange" />
+<view class="searchHistoryWrap" wx:if="{{showSearchHistory}}">
+    <view class="searchHistory" wx:for="{{getSearchHistory}}" wx:key="index" bindtap="searchHistoryWrapEv" data-item="{{item}}">
+        <view class="searchLeft">
+            <van-icon name="clock-o" color="#c0c0c0" />
+            <text class="searchHistoryText">{{item}}</text>
+        </view>
+        <view class="searchRight" catchtap="closeSearchHistoryEv" data-index="{{index}}">
+            <van-icon name="cross" color="#cccccc" size="34rpx" />
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{movies.list}}">
+    <view class="movieCategory">电影/电视剧/综艺</view>
+    <FilmCard allHotMovieList="{{movies.list}}"></FilmCard>
+    <view class="checkmore">查看全部{{movies.total}}部影视剧</view>
+</block>
+
+<view wx:if="{{cinemas.list}}" class="searchCinemasWrap">
+    <view class="movieCategory">影院</view>
+    <!-- <view class="searchCinemasBox" wx:for="{{cinemas.list}}" wx:key="index">
+        <view class="searchCinemas">
+            <view class="searchCinemasLeft">
+                <view class="searchCinemasTitle">{{item.nm}}</view>
+                <view class="searchCinemasAddress">{{item.addr}}</view>
+                <view class="searchCinemasTag" wx:for="{{hallType}}" wx:for-item="type" wx:key="index">{{type}}</view>
+            </view>
+
+            <view class="searchCinemasRight">
+                <view class="searchCinemasPrice">
+                    <text class="searchCinemasNum">{{item.sellPrice}}</text>
+                    <text class="searchCinemasYen">元</text>
+                    <text>起</text>
+                </view>
+                <view class="searchCinemasDistance">800m</view>
+            </view>
+        </view>
+    </view> -->
+    <block wx:for="{{cinemas.list}}" wx:key="index">
+    <Cinemas cinemasData="{{item}}"></Cinemas></block>
+    <view class="checkmore">查看全部{{cinemas.total}}家影院</view>
+</view>

@@ -1,0 +1,88 @@
+.cpMovieItem {
+    height: 100%;
+    margin: 0 6rpx;
+}
+
+.cpMovieItemFooter {
+    height: 42%;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cpMovieItemImg {
+    position: relative;
+    width: 160rpx;
+    height: 230rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+
+.cpMovieItemContent {
+    word-break: break-all;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 26rpx;
+    color: #3a3a3a;
+    margin: 20rpx 0 0;
+}
+
+.cpMovieItemTicket {
+    background-color: #f03d37;
+    width: 100rpx;
+    line-height: 50rpx;
+    border-radius: 25rpx;
+    font-size: 26rpx;
+    color: #fff;
+    margin: 20rpx 0 10rpx;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.cpMovieItemLeftTop {
+    position: absolute;
+    left: 6rpx;
+    top: 6rpx;
+    z-index: 9;
+    font-size: 20rpx;
+    background-color: #fff7eb;
+    color: #a55c00;
+    border-radius: 8rpx;
+    padding: 0 6rpx;
+}
+
+.cpMovieItemLeftBottom {
+    position: absolute;
+    left: 6rpx;
+    bottom: 6rpx;
+    z-index: 9;
+    font-size: 26rpx;
+    color: #faaf00;
+    font-weight: 700;
+}
+
+.cpMovieItemImgBottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 8;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0),
+     rgba(0, 0, 0, 0.300), rgba(0, 0, 0, 0.800));
+    width: 100%;
+    height: 100%;
+}
+
+.cpMovieItemRightBottom {
+    position: absolute;
+    right: 6rpx;
+    bottom: 6rpx;
+    z-index: 9;
+    font-size: 26rpx;
+}

@@ -1,0 +1,28 @@
+<view class="cpMovieItem">
+    <view class="cpMovieItemImg">
+        <slot name="itemImg" />
+        <view class="cpMovieItemLeftTop">
+            <slot name="itemLeftTop" />
+        </view>
+        <view class="cpMovieItemLeftBottom">
+            <slot name="itemLeftBottom" />
+        </view>
+        <view class="cpMovieItemRightBottom">
+            <slot name="itemRightBottom" />
+        </view>
+        <view class="cpMovieItemImgBottom">
+            <slot name="itemImgBottom" />
+        </view>
+    </view>
+
+    <view class="cpMovieItemFooter">
+        <view class="cpMovieItemContent">
+            <slot name="content1" />
+        </view>
+        <slot name="content2" />
+
+        <view class="cpMovieItemTicket">
+            <slot name="ticket" />
+        </view>
+    </view>
+</view>

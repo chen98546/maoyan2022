@@ -1,0 +1,139 @@
+<view class="gradient"></view>
+<view class="userInfo">
+    <view class="avatar">
+        <image class="avatarImg" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/asset/images/home-active.png'}}" alt="" />
+    </view>
+    <view class="block" wx:if="{{userInfo.nickName}}">
+        <view>{{userInfo.nickName}}</view>
+        <view class="vip">
+            <image class="vipImg" src="/asset/images/vip.png"></image>
+            <text>Lv1会员</text>
+        </view>
+    </view>
+    <button wx:else class="toLogin" plain  bindtap="toLoginEv">点击登录</button>
+    <view class="php">个人主页</view>
+</view>
+
+<view class="movie">
+    <view class="wantToSee" bindtap="wantToSeeEv">
+        想看 {{userInfo ? wantToSeemovie : '-'}}
+        <text class="evaluation">热映中 {{wantToSeemovie}}</text>
+        <van-icon name="arrow" color="#ffffff80" />
+    </view>
+
+    <view class="border"></view>
+    <view class="seen" bindtap="seenEv">
+        看过 {{userInfo ? seen : '-'}}
+        <text class="evaluation">待评价 {{evaluation}}</text>
+        <van-icon name="arrow" color="#ffffff80" />
+    </view>
+</view>
+
+
+<view class="members">
+    <image class="membersImg" src="/asset/images/member.png"></image>
+    <view wx:if='{{!userInfo}}' class="membersText">
+        <view>会员享抵用券礼包、喵币换礼</view>
+        <view class="LoginChecked">更多福利登录后查看</view>
+    </view>
+
+    <view wx:else class="sliderBox">
+        <view class="slider">
+            <view class="step" style="left:{{ sliderStep > 20 ? (sliderStep > 30 ? sliderStep  + (sliderStep / 2) : sliderStep)  : 0}}rpx">{{sliderStep}}/200
+                <!-- <view class="step" style="left:{{sliderStep > 20 ? sliderStep + 5.28 : 0}}rpx">{{sliderStep}}/200 -->
+                <view>
+                    <van-icon class="arrow" name="arrow-down" size="10rpx" />
+                </view>
+            </view>
+            <van-slider class="vantSlider" value="{{sliderStep}}" bar-height="12rpx" active-color="#ffbe4f" disabled min="0" max="200" />
+            <text class="tip">Lv1</text>
+            <text>距升级只差{{200-sliderStep}}成长值</text>
+            <van-icon name="arrow" color="#a2a2a2" size="18rpx" />
+        </view>
+        <view class="sliderBtn">进入</view>
+    </view>
+
+</view>
+
+<view class="order">
+    <text>我的订单</text>
+    <view class="orderBox">
+        <view class="item">
+            <image class="itemImg" src="/asset/images/movieTickets.png" alt="" />
+            <text>电影票</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/concertTickets.png" alt="" />
+            <text>演出票</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/onlineMovie.png" alt="" />
+            <text>在线观影</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/surrounding.png" alt="" />
+            <text>周边</text>
+        </view>
+    </view>
+</view>
+
+<view class="assets">
+    <text class="assetsTitle">我的资产</text>
+    <view class="wrap">
+        <view class="card">
+            <image class="wrapImg" src="/asset/images/coupons.png"></image>
+            <text class="cardText" style="color: #ff9b9a;">{{userInfo ? '0' : '-'}}</text>
+        </view>
+        <view class="card">
+            <image class="wrapImg" src="/asset/images/discountCard.png"></image>
+            <text class="cardText" style="color: #ffaf79;">{{userInfo ? '开卡立省' : '-'}}</text>
+        </view>
+        <view class="card">
+            <image class="wrapImg" src="/asset/images/enjoyCard.png"></image>
+            <text class="cardText" style="color: #a6bbf1;">{{userInfo ? '去绑卡' : '-'}}</text>
+
+        </view>
+        <view class="card">
+            <image class="wrapImg" src="/asset/images/currency.png"></image>
+            <text class="cardText" style="color: #ffaf79;">{{userInfo ? '360' : '-'}}</text>
+        </view>
+    </view>
+</view>
+<view class="service">
+    <text class="serviceTitle">我的服务</text>
+    <view class="orderBox serviceBox">
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service1.png" alt="" />
+            <text>买一赠一券</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service2.png" alt="" />
+            <text>关注公众号</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service3.png" alt="" />
+            <text>9元看电影</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service4.png" alt="" />
+            <text>猫眼商城</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service5.png" alt="" />
+            <text>在线观影</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service6.png" alt="" />
+            <text>云包场</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service7.png" alt="" />
+            <text>银行活动</text>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="/asset/images/service8.png" alt="" />
+            <text>看小说</text>
+        </view>
+    </view>
+</view>
+

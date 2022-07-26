@@ -1,0 +1,41 @@
+<wxs src="/utils/filter.wxs" module="filter" />
+
+<view class="tabBgColor"></view>
+
+<Search></Search>
+
+<van-tabs sticky offset-top="{{60}}" title-inactive-color="#333" title-active-color="#f03d37" active="{{ active }}" bind:change="activeChangeFn">
+    <van-tab title="热映">
+        <FilmCard class="FilmCard" allHotMovieList="{{allHotMovieList}}"></FilmCard>
+    </van-tab>
+
+
+    <van-tab title="影院">
+        <van-dropdown-menu active-color="#f03d37">
+            <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+            <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" title="{{title}}" bind:change="dropdownChangEv" />
+            <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
+        </van-dropdown-menu>
+
+        <view class="cinemasBox">
+            <block wx:for="{{cinemas}}" wx:key="index">
+                <Cinemas cinemasData="{{item}}" bindtap="checkCinemasDetail" data-cinemasId="{{item.id}}"></Cinemas>
+            </block>
+        </view>
+    </van-tab>
+    <van-tab title="待映">
+        <MovieCard class="MovieCard">
+            <view slot="title" class="title">待映推荐</view>
+            <MovieItem class="MovieItem" slot="movieItem" wx:for="{{ expectMovieList }}" wx:key="index" bindtap="checkMovieDetailFn" data-id="{{item.id}}">
+                <image lazy-load slot="itemImg" class="itemImg" src="{{item.img}}"></image>
+                <view slot="itemLeftBottom" class="expectWantToSeeTotal">
+                    {{item.wish < 10000 ? item.wish : filter.toFixed(item.wish / 10000, 1) }}<text class="expectWantToSeeText">{{item.wish < 10000 ? '' : '万' }}想看</text>
+                </view>
+                <view slot="content1">{{item.nm}}</view>
+                <view class="expectContent2" slot="content2">{{item.comingTitle}}</view>
+                <view slot="ticket" class="expectTicket" style="background:{{item.showStateButton.color}};">{{item.showStateButton.content ? item.showStateButton.content : '想看'}}</view>
+            </MovieItem>
+        </MovieCard>
+        <FilmCard class="FilmCard" allHotMovieList="{{allAwaitMovieList}}"></FilmCard>
+    </van-tab>
+</van-tabs>

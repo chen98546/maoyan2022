@@ -1,0 +1,19 @@
+.img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.van-tabbar-item__icon {
+  --tabbar-item-margin-bottom: 0
+}
+
+.van-tabbar{height:var(--tabbar-height,100rpx)}
+
+.footer {
+  height: 100rpx;
+}
+
+.van-tabbar-item {
+  font-size: 24rpx;
+}
+

@@ -1,0 +1,24 @@
+<view class="FilmCardBox">
+    <van-checkbox-group value="{{ checkedList }}" catch:change="onCheckedFn">
+        <view class="filmCard" wx:for="{{allHotMovieList}}" wx:key="index">
+            <van-checkbox style="display: {{isCheckEditBtn ? 'flex' : 'none'}};" class="FilmCardCheckbox" name="{{item.id}}" icon-size="46rpx"></van-checkbox>
+            <view class="filmLeft" catchtap="checkMovieDetailFn"  data-id="{{item.id}}">
+                <view class="filmImg">
+                    <image src="{{item.img}}" class="filmImage"></image>
+                </view>
+                <view class="filmDetail">
+                    <view class="filmTitle">{{item.nm}}</view>
+                    <view class="filmScore" wx:if="{{item.sc}}">猫眼评分{{item.sc}}</view>
+                    <view class="filmScore" wx:else>{{item.wish}}人想看</view>
+                    <view class="filmStarring">主演：{{item.star}}</view>
+                    <view class="filmCinema">{{showInfo}}</view>
+                    <!-- <slot name="filmDate"></slot> -->
+                    <view class="filmDate">{{item.pubDesc}}</view>
+                </view>
+            </view>
+            <view class="filmBtn" style="background:{{item.showStateButton.color}};display: {{isCheckEditBtn ? 'none' : 'flex'}};">
+                {{item.showStateButton.content ? item.showStateButton.content : '购票'}}
+            </view>
+        </view>
+    </van-checkbox-group>
+</view>

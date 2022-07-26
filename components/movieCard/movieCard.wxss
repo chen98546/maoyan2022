@@ -1,0 +1,62 @@
+/* components/movieCard.wxss */
+
+.movieCard {
+    background-color: #fff;
+    width: 93vw;
+    margin: 0 auto 30rpx;
+    border-radius: 16rpx;
+    padding: 30rpx 0 0;
+}
+
+
+.movieCard .movieHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.movieCard .movieHeader .left {
+    display: flex;
+    align-items: center;
+    margin-left: 20rpx;
+}
+
+.movieCard .movieHeader .left .title {
+    font-size: 34rpx;
+    font-weight: 700;
+}
+
+.movieCard .movieHeader .left .line {
+    margin: 0 20rpx;
+    color: #ccc;
+    transform: scale(0.5, 0.8);
+}
+
+
+.movieCard .movieHeader .left .subtitle {
+    font-size: 34rpx;
+    color: #595959;
+}
+
+.movieCard .movieHeader .right {
+    display: flex;
+    align-items: center;
+}
+
+.movieCard .movieHeader .right .checkMore {
+    color: #595959;
+    font-size: 26rpx;
+    margin-right: 20rpx;
+    display: flex;
+}
+
+.movieCard .scrollView {
+    margin-top: 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.itemBox {
+    display: flex;
+    justify-content: space-between;
+}

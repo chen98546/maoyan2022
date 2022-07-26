@@ -1,0 +1,29 @@
+<!-- <view class="cinemasBox"> -->
+<view class="cinemasItem">
+    <view class="cinemasLeft">
+        <view class="cinemasTitle">{{cinemasData.nm}}</view>
+        <view class="cinemasAddress">{{cinemasData.addr}}</view>
+        <view class="cinemasTag">
+            <text class="tag1" wx:if="{{cinemasData.tag.allowRefund}}">退</text>
+            <text class="tag1" wx:if="{{cinemasData.tag.endorse}}">改签</text>
+            <text class="tag2" wx:if="{{cinemasData.tag.snack}}">小吃</text>
+            <text class="tag2" wx:if="{{cinemasData.tag.vipTag}}">折扣卡</text>
+            <block wx:for="{{cinemasData.tag.hallTypeVOList}}" wx:key="index">
+                <text class="tag1">{{item.name}}</text>
+            </block>
+        </view>
+        <view class="cinemasMovie"><text class="huiTag">惠</text> 你是我的春天</view>
+        <view class="cinemasOdds"><text wx:if="{{ cinemasData.promotion.cardPromotionTag }}" class="cardTag">卡</text> {{cinemasData.promotion.cardPromotionTag}}</view>
+    </view>
+    <view class="cinemasRight">
+        <view class="cinemasSmall">
+            <view>
+                <text class="cinemasPrice">{{cinemasData.sellPrice ? cinemasData.sellPrice : '29.9'}}</text>
+                <text class="cinemasYen">元</text>
+                <text>起</text>
+            </view>
+            <view class="distance">{{cinemasData.distance}}</view>
+        </view>
+    </view>
+</view>
+<!-- </view> -->

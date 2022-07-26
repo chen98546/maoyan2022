@@ -1,0 +1,46 @@
+.van-search {
+    background: none !important;
+}
+
+.van-cell {
+    padding: var(--cell-vertical-padding,8rpx) var(--cell-horizontal-padding,0) !important;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20rpx;
+    color: #fff;
+}
+
+.header .logo {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.header .address {
+    font-size: 26rpx;
+    /* color: #fff; */
+    margin: 0 10rpx;
+}
+
+.header .address .arrowDown {
+    font-size: 16rpx;
+    vertical-align: middle;
+    margin: 0 0 0 6rpx;
+}
+
+.header .van-search {
+    padding-left: 10rpx;
+    background: none !important;
+
+}
+
+.header .van-search .van-search__content {
+    padding: 2rpx 0 2rpx 24rpx;
+    background-color: #f5f5f5;
+}

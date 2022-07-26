@@ -1,0 +1,244 @@
+.van-tab {
+    line-height: var(--tabs-line-height, 50rpx) !important;
+}
+
+.van-tabs__wrap {
+    padding: 30rpx 0;
+}
+
+.van-tabs__scroll {
+    background-color: var(--tabs-nav-background-color, none) !important;
+}
+
+.van-tabs__nav {
+    left: -10px;
+}
+
+.van-ellipsis {
+    color: #fff;
+    padding: 0;
+    font-size: 28rpx;
+}
+
+.van-tabs__line {
+    bottom: -7rpx !important;
+    height: var(--tabs-bottom-bar-height, 6rpx) !important;
+}
+
+.van-field__control {
+    width: 300rpx !important;
+    min-height: var(--cell-line-height, 30rpx) !important;
+}
+
+.van-cell__left-icon-wrap,
+.van-cell__right-icon-wrap {
+    line-height: var(--cell-line-height, 30rpx) !important;
+}
+
+.van-sticky {
+    z-index: 15 !important;
+    /* height: 0 !important; */
+}
+
+.van-sticky-wrap {
+    transform: translate3d(0, 0, 0) !important;
+    z-index: 1 !important;
+    top: 105rpx !important;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.tabBgColor {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200rpx;
+    z-index: 14;
+}
+
+.indexHeader {
+    background-color: #f1f1f1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.swiper {
+    width: 93vw;
+    height: 200rpx;
+    margin: 230rpx auto 0;
+    overflow: hidden;
+    border-radius: 22rpx;
+    position: relative;
+    /* top: 160rpx;
+    margin-bottom: 180rpx; */
+    z-index: 9;
+}
+
+
+.swiper .banner {
+    width: 100%;
+    height: 100%;
+    border-radius: 22rpx;
+}
+
+.bgc {
+    width: 100%;
+    height: 460rpx;
+    /* background: linear-gradient(red, pink); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.movieBgImg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.order {
+    width: 93vw;
+    margin: 30rpx auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20rpx 20rpx 30rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 0 4rpx 16rpx 2rpx #f0f1f3;
+    color: #333;
+    position: relative;
+    z-index: 10;
+}
+
+.orderBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30rpx;
+    padding: 0 20rpx;
+}
+
+.orderBox .item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24rpx;
+}
+
+.orderBox .item .itemImg {
+    width: 84rpx;
+    height: 84rpx;
+    margin-bottom: 10rpx;
+}
+
+
+.assets {
+    /* padding: 0 30rpx; */
+    margin-top: 30rpx;
+}
+
+.assets .wrap {
+    display: flex;
+}
+
+.assets .wrap .card {
+    position: relative;
+    flex-shrink: 0;
+    width: 150rpx;
+    height: 110rpx;
+    border-radius: 16rpx;
+    margin-right: 18rpx;
+    border: 4rpx solid #f0f0f0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.assets .wrap .wrapImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 16rpx;
+    margin-bottom: 10rpx;
+}
+
+.MovieItem {
+    margin-bottom: 20rpx;
+}
+
+.MovieItem:first-child {
+    margin-left: 14rpx;
+}
+
+.MovieItem:last-child {
+    padding-right: 14rpx;
+}
+
+.itemImg {
+    width: 100%;
+    height: 100%;
+}
+
+.moreArrow {
+    margin-top: 4rpx;
+}
+
+
+.score {
+    font-weight: 300;
+    font-size: 22rpx;
+}
+
+.expectContent2 {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.expectWantToSeeTotal {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18rpx;
+    margin: 0 0 6rpx 6rpx;
+}
+
+.expectWantToSeeText {
+    font-size: 20rpx;
+}
+
+.expectTicket {
+    background-color: #faaf00;
+}
+
+.wonderfulContent1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+}
+
+.hotMovieCard .cpMovieItemFooter {
+    height: 35%;
+}
+
+.indexFooter {
+    position: relative;
+    left: 0;
+    top: 240rpx;
+    width: 100%;
+    height: 1500rpx;
+    background-color: red;
+    opacity: 0;
+}

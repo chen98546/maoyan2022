@@ -1,0 +1,141 @@
+<wxs src="/utils/filter.wxs" module="filter" />
+<view class="tabBgColor" style="display:  {{!tabBgColorIsTrue ? 'none' : 'block'}};"></view>
+
+<view class="indexHeader">
+    <Search tabBgColorIsTrue="{{tabBgColorIsTrue}}" city="{{city}}"></Search>
+
+    <van-tabs id="vanTabs" sticky offset-top="{{60}}" active="{{active}}" color="{{tabBgColorIsTrue ? '#f03d37' : !active ? '#fff' : '#f03d37'}}" line-width="32rpx" swipe-threshold="{{4}}" bind:change="changIndexFn">
+        <van-tab title="推荐" title-style="color:{{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}}; font-size:{{active == 0 ? '40rpx' : ''}}">
+            <swiper class="swiper" indicator-dots indicator-color="#ffffff50" indicator-active-color="#fff" autoplay circular bindchange="swiperChangeFn">
+                <swiper-item class="swiperItem" wx:for="{{swiperData}}" wx:key="index">
+                    <image class="banner" src="{{item.src}}"></image>
+                </swiper-item>
+            </swiper>
+
+            <view class="order">
+                <view class="orderBox">
+                    <view class="item">
+                        <image class="itemImg" src="/asset/images/dianying.png" alt="" />
+                        <text>电影/影院</text>
+                    </view>
+                    <view class="item">
+                        <image class="itemImg" src="/asset/images/wanle.png" alt="" />
+                        <text>演出/玩乐</text>
+                    </view>
+                    <view class="item">
+                        <image class="itemImg" src="/asset/images/fangyingting.png" alt="" />
+                        <text>放映厅</text>
+                    </view>
+                    <view class="item">
+                        <image class="itemImg" src="/asset/images/saishi.png" alt="" />
+                        <text>赛事</text>
+                    </view>
+                </view>
+
+                <scroll-view class="assets" scroll-x>
+                    <view class="wrap">
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/zhuluoji3.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/shengqianyueka.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/zaixianguanying.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/shenzhenshouyan.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/yinhanghuodong.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/kanxiaoshuo.png"></image>
+                        </view>
+                        <view class="card">
+                            <image class="wrapImg" src="/asset/images/maoyanshangcheng.png"></image>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+
+            <!-- 热映 -->
+            <MovieCard class="hotMovieCard">
+                <view slot="title">正在热映</view>
+                <view slot="checkMore" bindtap="checkMoreFn" data-active="0">全部{{hotMovieTotal}}部
+                    <van-icon name="arrow" slot="moreArrow" class="moreArrow" />
+                </view>
+                <MovieItem class="MovieItem" slot="movieItem" wx:for="{{ hotMovieList }}" wx:key="index" bindtap="checkMovieDetailFn" data-id="{{item.id}}">
+                    <image lazy-load slot="itemImg" class="itemImg" src="{{item.img}}"></image>
+                    <view slot="itemLeftTop">{{item.wantToSeemovieTag}}</view>
+                    <view slot="itemLeftBottom">{{item.sc ? filter.toFixed(item.sc, 1) : ''}}<text class="score">{{item.sc ? '' : '暂无评'}}分</text></view>
+                    <view slot="content1">{{item.nm}}</view>
+                    <view slot="ticket" style="background:{{item.showStateButton.color}}" data-state="{{item.showStateButton}}" catchtap="ticketBtnEv">{{item.showStateButton.content}}</view>
+                </MovieItem>
+            </MovieCard>
+
+            <!-- 待映 -->
+            <MovieCard>
+                <view slot="title">待映推荐</view>
+                <view slot="line">|</view>
+                <view slot="subtitle">即将上映</view>
+                <view slot="checkMore" bindtap="checkMoreFn" data-active="2">全部{{paging.total}}部
+                    <van-icon name="arrow" slot="moreArrow" class="moreArrow" />
+                </view>
+                <MovieItem class="MovieItem" slot="movieItem" wx:for="{{ expectMovieList }}" wx:key="index" bindtap="checkMovieDetailFn" data-id="{{item.id}}">
+                    <image lazy-load slot="itemImg" class="itemImg" src="{{item.img}}"></image>
+                    <view slot="itemLeftBottom" class="expectWantToSeeTotal">
+                        {{item.wish < 10000 ? item.wish : filter.toFixed(item.wish / 10000, 1) }}<text class="expectWantToSeeText">{{item.wish < 10000 ? '' : '万' }}想看</text>
+                    </view>
+                    <view slot="content1">{{item.nm}}</view>
+                    <view class="expectContent2" slot="content2">{{item.comingTitle}}</view>
+                    <view slot="ticket" class="expectTicket" style="background:{{item.showStateButton.color}};">{{item.showStateButton.content ? item.showStateButton.content : '想看'}}</view>
+                </MovieItem>
+            </MovieCard>
+
+            <!-- 精彩演出 -->
+            <MovieCard>
+                <view slot="title">精彩演出</view>
+                <view slot="line">|</view>
+                <view slot="subtitle">一周玩乐攻略</view>
+                <view slot="checkMore">查看全部</view>
+                <van-icon name="arrow" slot="moreArrow" class="moreArrow" />
+                <MovieItem class="MovieItem" slot="movieItem" wx:for="{{ wonderfulMovieList }}" wx:key="index" bindtap="checkMovieDetailFn" data-id="{{item.id}}">
+                    <image lazy-load slot="itemImg" class="itemImg" src="{{item.posterUrl}}"></image>
+                    <view slot="itemLeftBottom">{{item.score !== '0.0' ? item.score : ''}}<text class="score">{{item.score !== '0.0' ? '分' : ''}}</text></view>
+                    <view slot="content1" class="wonderfulContent1">{{ item.shortName ? item.shortName : item.name}}</view>
+                    <view slot="ticket">购票</view>
+                </MovieItem>
+            </MovieCard>
+
+            <!-- 沉浸剧场 -->
+            <MovieCard>
+                <view slot="title">沉浸剧场</view>
+                <view slot="checkMore">查看全部</view>
+                <van-icon name="arrow" slot="moreArrow" class="moreArrow" />
+                <MovieItem class="MovieItem" slot="movieItem" wx:for="{{ theatreMovieList }}" wx:key="index" bindtap="checkMovieDetailFn" data-id="{{item.id}}">
+                    <image lazy-load slot="itemImg" class="itemImg" src="{{item.posterUrl}}"></image>
+                    <view slot="itemLeftBottom">{{item.score !== '0.0' ? item.score : ''}}<text class="score">{{item.score !== '0.0' ? '分' : ''}}</text></view>
+                    <view slot="content1" class="wonderfulContent1">{{ item.shortName ? item.shortName : item.name}}</view>
+                    <view slot="ticket">购票</view>
+                </MovieItem>
+            </MovieCard>
+
+        </van-tab>
+
+
+
+        <van-tab title="预告片" title-style="color:{{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}}; font-size:{{active == 1 ? '36rpx' : ''}}">
+            <VideoCard></VideoCard>
+        </van-tab>
+        <van-tab title="热片解读" title-style="color:{{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}}; font-size:{{active == 2 ? '36rpx' : ''}}"></van-tab>
+        <van-tab title="速看电影" title-style="color:{{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}}; font-size:{{active == 3 ? '36rpx' : ''}}"></van-tab>
+        <van-tab title="剧集综艺" title-style="color:{{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}}; font-size:{{active == 4 ? '36rpx' : ''}}"></van-tab>
+    </van-tabs>
+
+    <view class="bgc" hidden="{{active !== 0}}" style="background: linear-gradient({{selectBgcColor}}, {{selectBgcColor}},#f0f0ee)"></view>
+</view>
+<image class="movieBgImg" src="/asset/images/movieBgImg.png" hidden="{{active !==0}}"></image>
+
+<view class="indexFooter">
+</view>

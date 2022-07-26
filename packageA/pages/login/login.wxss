@@ -1,0 +1,150 @@
+.bgc {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.maoyan {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 160rpx auto 180rpx;
+}
+
+.maoyan .maoyanImg {
+    width: 100%;
+    height: 100%;
+}
+
+.maoyan .text {
+    width: 100%;
+    margin-top: 4rpx;
+    text-align: center;
+    font-size: 44rpx;
+    color: #f03d37;
+    font-weight: 700;
+}
+
+.deal {
+    display: flex;
+    justify-content: center;
+    font-size: 28rpx;
+}
+
+.deal .van-checkbox .van-checkbox__icon {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: -10rpx;
+}
+
+.loginBtn {
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.loginBtn .van-button {
+    width: 80vw;
+    height: 100rpx;
+    border-radius: 55rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.navigator {
+    display: inline-block;
+    color: #3884c7;
+    text-decoration: underline;
+    margin-right: 20rpx;
+}
+
+.modalMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background-color: #00000095;
+}
+
+/* 370 460 */
+.modal {
+    width: 600rpx;
+    /* height: 600rpx; */
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+    transform: translate(-50%, -50%);
+    border-radius: 40rpx;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+
+.modal .modalClose {
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+    cursor: pointer;
+}
+
+.modal .modalIcon {
+    margin-top: 80rpx;
+}
+
+
+.modal .modalContent1 {
+    margin-top: 30rpx;
+    font-size: 34rpx;
+}
+
+.modal .modalContent2 {
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    margin-bottom: 200rpx;
+}
+
+.modal .modalBtn {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1rpx solid #e5e5e5;
+    font-size: 38rpx;
+}
+
+.modal .modalBtn .modalRefuse {
+    display: inline-block;
+    flex: 1;
+    line-height: 130rpx;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+.modal .modalBtn .modalRefuse::after {
+    border: none;
+    outline: none;
+}
+
+.modal .modalBtn .modalAllow {
+    display: inline-block;
+    flex: 1;
+    line-height: 130rpx;
+    color: #f03d37;
+    border-left: 1rpx solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 0rpx;
+}
+
+.modal .modalBtn .modalAllow::after {
+    border: none;
+    outline: none;
+}

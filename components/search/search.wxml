@@ -1,0 +1,8 @@
+<view class="header">
+    <image class="logo" src="/asset/images/logo.png"></image>
+    <view class="address" style="color: {{tabBgColorIsTrue ? '#333' : !active ? '#fff' : '#333'}};">
+        {{city}}
+        <van-icon name="arrow-down" class="arrowDown" />
+    </view>
+    <van-search shape="round" placeholder="长津湖之水门桥" bind:focus="focusToSearchPage" />
+</view>

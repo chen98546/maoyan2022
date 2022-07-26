@@ -1,0 +1,52 @@
+<view class="eSports">
+    <image class="eSportsTitle" src="/asset/images/event-text.png"></image>
+    <view class="eSportsBox">
+        <image class="img" src="/asset/images/event-lol.png"></image>
+        <image class="img" src="/asset/images/event-wangzhe.png"></image>
+        <view class="eSportsImg">
+            <image class="img2" src="/asset/images/event-chiji.png"></image>
+            <image class="img3" src="/asset/images/event-feiche.png"></image>
+        </view>
+    </view>
+</view>
+
+<view class="hotSports">
+    <view class="hotSportsTitle">热门赛事</view>
+    <van-tabs animated line-width="24rpx">
+        <van-tab title="全部" name="a">
+            <view class="item" wx:for="{{hotSportsData}}" wx:key="index">
+                <image class="pic" src="{{item.src}}"></image>
+                <view class="text">
+                    <view class="title">{{item.title}}</view>
+                    <view class="date">{{item.date}}</view>
+                    <view class="address">{{item.address}}</view>
+                    <view class="price"><text class="ticket" v-if="item.status">售票中</text> {{item.price}}</view>
+                </view>
+            </view>
+            <view  v-if="{{noEvent}}" class="noEvent">没有更多赛事了</view>
+        </van-tab>
+        <van-tab title="电竞赛事" class="tournament" name="b">
+            <image class="nothing" src="/asset/images/nothing.png"></image>
+            <view class="empty">暂无赛事，看看更多演出</view>
+        </van-tab>
+        <van-tab title="体育赛事" name="c">
+            <view class="item" wx:for="{{hotSportsData}}" wx:key="index">
+                <image class="pic" src="{{item.src}}"></image>
+                <view class="text">
+                    <view class="title">{{item.title}}</view>
+                    <view class="date">{{item.date}}</view>
+                    <view class="address">{{item.address}}</view>
+                    <view class="price"><text class="ticket" v-if="item.status">售票中</text> {{item.price}}</view>
+                </view>
+            </view>
+            <view  v-if="{{noEvent}}" class="noEvent">没有更多赛事了</view>
+        </van-tab>
+
+        <view slot="nav-right" class="navRight">
+            城市
+            <van-icon name="arrow-down" size="16rpx" custom-style="margin-left:8rpx" />
+        </view>
+    </van-tabs>
+</view>
+
+<view v-if="{{noEvent}}" class="noEvent">没有更多赛事了</view>

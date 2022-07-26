@@ -1,0 +1,31 @@
+<view class="maoyanBGC">
+    <image class="bgc" src="/asset/images/loginbgc.png"></image>
+    <view class="maoyan">
+        <image class="maoyanImg" src="/asset/images/index.png"></image>
+        <view class="text">猫眼娱乐</view>
+    </view>
+
+    <view class="deal">
+        <van-checkbox value="{{flag}}" checked-color="#979797" bindtap="isFlagFn">您已阅读并同意
+            <navigator class="navigator">《用户协议》</navigator>
+            <navigator class="navigator">《隐私政策》</navigator>
+        </van-checkbox>
+    </view>
+
+    <view class="loginBtn">
+        <van-button type="danger" disabled="{{!flag}}" bindtap="loginFn">微信登录</van-button>
+    </view>
+
+    <view class="modalMask" hidden="{{closeModal}}"></view>
+
+    <view class="modal" hidden="{{closeModal}}">
+        <van-icon class="modalClose" name="cross" size="40rpx" color="#999" bindtap="closeModalFn" />
+        <van-icon class="modalIcon" name="passed" color="#00cb8f" size="100rpx" />
+        <view class="modalContent1">微信授权成功</view>
+        <view class="modalContent2">授权绑定你的手机号</view>
+        <view class="modalBtn">
+            <button class="modalRefuse" bindtap="modalRefuseFn">拒绝</button>
+            <button class="modalAllow" bindtap="modalAllowFn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">允许</button>
+        </view>
+    </view>
+</view>

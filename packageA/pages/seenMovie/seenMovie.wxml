@@ -1,0 +1,19 @@
+<van-tabs active="{{ active }}" title-active-color="#f03d37" line-width="100">
+    <van-tab title="电影">
+        <view class="wantToSeeHead">
+            <view class="movieCount">共{{movieList.length}}部</view>
+            <view class="wantToSeeHeadEditBtn" bindtap="isCheckEditBtnFn">{{isCheckEditBtn ? '取消' : '编辑'}}</view>
+        </view>
+
+        <view class="wantToSeeCard">
+            <FilmCard class="FilmCard" allHotMovieList="{{movieList}}" isCheckEditBtn="{{isCheckEditBtn}}" bind:filmCard="filmCardFn"></FilmCard>
+            <view class="wantToSeeFooter" style="display: {{isCheckEditBtn ? 'flex' : 'none'}};">
+                <view>已选择<text>0</text>条</view>
+                <van-button type="danger" round disabled="{{disabledBtn}}" bindtap="deleteBtnFn">删除</van-button>
+            </view>
+        </view>
+    </van-tab>
+    <van-tab title="电视剧">内容 2</van-tab>
+    <van-tab title="综艺">内容 3</van-tab>
+    <van-tab title="演出">内容 4</van-tab>
+</van-tabs>

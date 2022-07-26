@@ -1,0 +1,124 @@
+page {
+    background-color: #f5f5f5;
+}
+
+.van-search {
+    border-bottom: 3rpx solid #e5e5e5;
+    padding: var(--search-padding, 15rpx 20rpx) !important;
+}
+
+.van-search__content {
+    border: 3rpx solid #e6e6e6;
+    border-radius: 10rpx !important;
+    padding-left: var(--padding-sm, 0) !important;
+    background-color: #fff !important;
+}
+
+.van-search__action {
+    color: #ef4238 !important;
+    font-size: 30rpx !important;
+}
+
+.van-icon-search {
+    color: #b2b2b2;
+    transform: scale(1.1);
+}
+
+.movieCategory {
+    width: 100%;
+    line-height: 80rpx;
+    background-color: #fff;
+    color: #333;
+    border-bottom: 2rpx solid #e6e6e6;
+    padding: 0 30rpx;
+}
+
+.checkmore {
+    width: 100%;
+    text-align: center;
+    line-height: 90rpx;
+    background-color: #fff;
+    color: #ef4238;
+    border-top: 2rpx solid #e6e6e6;
+    margin-top: -2rpx;
+}
+
+.searchHistoryWrap {
+    background-color: #fff;
+    padding: 0 0 0 30rpx;
+}
+
+.searchHistoryWrap .searchHistory {
+    width: 100%;
+    line-height: 80rpx;
+    border-bottom: 4rpx solid #e6e6e6;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.searchHistoryWrap .searchHistory .searchHistoryText {
+    display: inline-block;
+    margin-left: 20rpx;
+}
+
+.searchRight {
+    margin-right: 30rpx;
+}
+
+.searchCinemasWrap {
+    background-color: #fff;
+    margin: 30rpx 0;
+}
+
+.searchCinemasBox {
+    padding: 0 0 0 20rpx;
+}
+
+
+.searchCinemas {
+    width: 100%;
+    line-height: 80rpx;
+    border-bottom: 4rpx solid #e6e6e6;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #999;
+    padding: 20rpx 0;
+}
+
+.searchCinemasTitle {
+    font-size: 32rpx;
+    color: #000;
+}
+
+.searchCinemasAddress {
+    font-size: 24rpx;
+    color: #666;
+    line-height: 1.2;
+}
+
+.searchCinemasNum {
+    font-size: 34rpx;
+    color: #ef4238;
+}
+
+.searchCinemasYen {
+    color: #ef4238;
+}
+
+.searchCinemasTag {
+    line-height: 2;
+}
+
+.searchCinemasLeft {
+    flex: 2;
+}
+
+.searchCinemasRight {
+    flex: 0.5;
+    text-align: right;
+    margin-right: 20rpx;
+}

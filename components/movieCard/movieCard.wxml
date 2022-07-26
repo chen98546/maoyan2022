@@ -1,0 +1,28 @@
+<view class="movieCard">
+    <view class="movieHeader">
+        <view class="left">
+            <view class="title">
+                <slot name="title" />
+            </view>
+            <view class="line">
+                <slot name="line" />
+            </view>
+            <view class="subtitle">
+                <slot name="subtitle" />
+            </view>
+        </view>
+        <view class="right">
+            <view class="checkMore">
+                <slot name="checkMore" />
+                <slot name="moreArrow"></slot>
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="scrollView" scroll-x>
+        <view class="itemBox">
+            <!-- <MovieItem></MovieItem> -->
+            <slot name="movieItem" />
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,79 @@
+<view class="detailPageBgcolor" style="background:{{movieDetail.backgroundColor}}">
+    <view class="detailHeader">
+        <view class="detailImg">
+            <image src="{{movieDetail.img}}"></image>
+        </view>
+        <view class="DetailRight">
+            <view class="DetailRightTitle">
+                {{movieDetail.nm}}
+            </view>
+
+            <view class="DetailRightContent">
+                <view class="DetailRightSubtitle">
+                    {{movieDetail.scm }}
+                </view>
+                <view class="DetailRightPlot">
+                    剧情 {{movieDetail.ver}}
+                </view>
+                <view class="DetailRightDate">
+                    {{movieDetail.pubDesc}}
+                </view>
+            </view>
+
+            <view class="DetailRightBtn">
+                <view class="DetailRightBtn1" bindtap="seeMovieFn" style="background-color: {{wantToseeMovie ? '#ffffff10' : ''}}; color: {{wantToseeMovie ? '#ffffff40' : ''}};">{{wantToseeMovie ? '已想看' : '想看'}}</view>
+                <view class="DetailRightBtn1">看过</view>
+            </view>
+        </view>
+    </view>
+    
+    <video class="video" src="{{movieDetail.vd}}"></video>
+
+    <view class="detailWatch detailPage">
+        <view class="detailText">
+            <image src="/asset/images/logo-new.png" class="newLogo"></image>
+            猫眼想看
+        </view>
+        <view class="detailSum">
+            <text class="detailCount">{{movieDetail.wish}}</text>
+            <text>人想看</text>
+        </view>
+    </view>
+
+    <view class="detailSpecial detailPage">
+        <view class="detailSpecialLeft">
+            <view class="detailSpecialTag">特殊场</view>
+            <view class="detailSpecialText">买一赠一券限量抢</view>
+        </view>
+        <view class="detailSpecialIcon">
+            <van-icon name="arrow" />
+        </view>
+    </view>
+
+    <view class="detailAbstract">
+        <view class="detailTitle">简介</view>
+        <view bindtap="detailAbstractUnfoldFn" class="detailAbstractContent" style="height: {{isShowInfo ? 'fit-content' : '110rpx'}};">{{movieDetail.dra}}</view>
+        <text class="detailAbstractUnfold" hidden="{{isShowInfo}}" bindtap="detailAbstractUnfoldFn" style="background:{{movieDetail.backgroundColor}}"> ... 展开</text>
+    </view>
+
+    <view class="detailStar">
+        <view class="detailTitle">演职人员</view>
+        <scroll-view scroll-x="{{true}}">
+            <view class="detailStarScroll">
+                <view class="detailStarContent" wx:if="{{movieDetail.photos}}">
+                    <view class="detailStarImg">
+                        <image src="{{item}}"></image>
+                    </view>
+                    <view class="detailStarName">陈道明</view>
+                    <view class="detailStarPosition">总监制</view>
+                </view>
+            </view>
+        </scroll-view>
+
+    </view>
+
+    <view class="buyBtnWrap">
+        <button class="buyBtn" bindtap="buyTicketEv">特惠购票</button>
+    </view>
+
+</view>

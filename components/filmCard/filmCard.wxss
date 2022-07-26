@@ -1,0 +1,81 @@
+.FilmCardBox {
+    border-top: 3rpx solid #e6e6e6;
+}
+
+.filmCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    border-bottom: 3rpx solid #dcdcdc;
+    background-color: #fff;
+}
+
+.filmCard .filmLeft {
+    display: flex;
+    flex: 1;
+}
+
+.filmCard .filmLeft .filmImg {
+    width: 130rpx;
+    height: 180rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+
+.filmCard .filmLeft .filmImg .filmImage {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.filmCard .filmLeft .filmDetail {
+    width: 400rpx;
+    font-size: 26rpx;
+    color: #666666;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.filmCard .filmLeft .filmDetail .filmTitle {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.filmCard .filmLeft .filmDetail .filmStarring {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+.filmCard .filmLeft .filmDetail .filmCinema {
+    color: #999;
+}
+
+.filmCard .filmBtn {
+    background-color: #f03d37;
+    width: 100rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    font-size: 26rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+/* .FilmCardCheckbox { */
+    /* width: 50rpx;
+    height: 50rpx;
+    border: 2rpx solid #ccc;
+    border-radius: 50%;
+    margin-right: 20rpx; */
+/* } */

@@ -1,0 +1,88 @@
+{
+  "pages": [
+    "pages/user/user",
+    "pages/index/index",
+    "pages/video/video",
+    "pages/show/show",
+    "pages/event/event"
+  ],
+  "usingComponents": {
+    "MovieCard": "/components/movieCard/movieCard",
+    "MovieItem": "/components/movieItem/movieItem",
+    "Search": "/components/search/search",
+    "FilmCard": "/components/filmCard/filmCard",
+    "Cinemas": "/components/cinemas/cinemas",
+    "VideoCard": "/components/videoCard/videoCard",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-slider": "@vant/weapp/slider/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "/asset/images/home.png",
+      "selectedIconPath": "/asset/images/home-active.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/video/video",
+      "iconPath": "/asset/images/video.png",
+      "selectedIconPath": "/asset/images/video-active.png",
+      "text": "电影/影院"
+    }, {
+      "pagePath": "pages/show/show",
+      "iconPath": "/asset/images/show.png",
+      "selectedIconPath": "/asset/images/show-active.png",
+      "text": "演出"
+    }, {
+      "pagePath": "pages/event/event",
+      "iconPath": "/asset/images/event.png",
+      "selectedIconPath": "/asset/images/event-active.png",
+      "text": "体育/赛事"
+    }, {
+      "pagePath": "pages/user/user",
+      "iconPath": "/asset/images/user.png",
+      "selectedIconPath": "/asset/images/user-active.png",
+      "text": "我的"
+    }]
+  },
+  "subPackages": [{
+    "root": "packageA",
+    "name": "p1",
+    "pages": [
+      "pages/login/login",
+      "pages/movieDetail/movieDetail",
+      "pages/wantToSeeMovie/wantToSeeMovie",
+      "pages/seenMovie/seenMovie",
+      "pages/cinemasDetail/cinemasDetail",
+      "pages/searchDetail/searchDetail"
+    ]
+  }],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1f1f26",
+    "navigationBarTitleText": "电影演出赛事",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
